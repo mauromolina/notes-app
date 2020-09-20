@@ -4,6 +4,11 @@ This app can:
 - CRUD Notes
 - Allows a user to do log in and save his personal notes
 
+# Preview
+
+The app is now live on: [Heroku](https://mmnotesapp.herokuapp.com/
+
+
 # Environment Variables
 This app needs the following environment Variables
 * `MONGODB_HOST` this is the Mongodb URI string

@@ -6,7 +6,7 @@ This app can:
 
 # Preview
 
-The app is now live on: [Heroku](https://mmnotesapp.herokuapp.com/
+The app is now live on: [Heroku](https://mmnotesapp.herokuapp.com/)
 
 
 # Environment Variables

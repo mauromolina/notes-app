@@ -4,3 +4,7 @@ body {
     background: -webkit-linear-gradient(to right, #1F1C18, #8E0E00);  /* Chrome 10-25, Safari 5.1-6 */
 
 }
+
+.logo {
+    width: 40%;
+}

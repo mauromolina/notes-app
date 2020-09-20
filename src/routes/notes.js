@@ -7,16 +7,16 @@ router.get('/notes/new', (req, res) => {
 
 router.post('/notes/add', async (req, res) => {
     const { title, description } = req.body;
-    const msg = [];
+    const errors = [];
     if(!title) {
-        msg.push({text: 'El título es obligatorio!'});
+        errors.push({text: 'El título es obligatorio!'});
     }
     if(!description){
-        msg.push({text: 'La descripción es obligatoria!'})
+        errors.push({text: 'La descripción es obligatoria!'})
     }
     if(msg.length > 0){
         res.render('notes/newNote', {
-            msg,
+            errors,
             title,
             description
         })

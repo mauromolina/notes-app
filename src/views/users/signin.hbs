@@ -1,1 +1,25 @@
-<h1>Iniciar sesión</h1>
+<div class="row">
+    <div class="col-md-4 mx-auto my-5">
+        <div class="card">
+            <div class="card-header text-center text-uppercase font-weight-bold">
+                Iniciar sesión
+            </div>
+            <img src="/img/mm.png" alt="Logo" class="rounded-circle mx-auto d-block m-4 logo">
+            <div class="card-body">
+                <form action="/users/signup" method="POST">
+                    <div class="form-group">
+                        <input type="email" name="email" placeholder="Correo" class="form-control {{alerts.msgEmail}}" value="{{errors.msg}}" autofocus>
+                    </div>
+                    <div class="form-group">
+                        <input type="password" name="password" placeholder="Contraseña" class="form-control {{alerts.msgPass}}">
+                    </div>
+                    <div class="form-group">
+                        <button type="submit" class="btn btn-primary btn-block">
+                            Iniciar sesión
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

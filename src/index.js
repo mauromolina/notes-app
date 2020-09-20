@@ -41,6 +41,11 @@ app.use((req, res, next) => {
     res.locals.success_msg = req.flash('success_msg');
     res.locals.error_msg = req.flash('error_msg');
     res.locals.error = req.flash('error');
+    let user = null
+    if(req.user){
+        user =JSON.parse(JSON.stringify(req.user))
+    } 
+    res.locals.user = user 
     next();
 });
 

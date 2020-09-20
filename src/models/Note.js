@@ -13,6 +13,9 @@ const NoteSchema = new Schema({
     creationDate: {
         type: Date,
         default: Date.now
+    }, 
+    user: {
+        type: String
     }
 })
 

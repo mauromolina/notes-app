@@ -15,23 +15,26 @@
                     </li>
                 </ul>
                 <ul class="navbar-nav ml-auto">
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        Notas
-                        </a>
-                        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                        <a class="dropdown-item" href="/notes">Mis notas</a>
-                        <a class="dropdown-item" href="/notes/new">Nueva nota</a>
-                        <div class="dropdown-divider"></div>
-                        <a class="dropdown-item" href="/users/logout">Cerrar sesión</a>
-                        </div>
-                    </li>
-                    <li class="nav-item active">
-                        <a class="nav-link" href="users/signin">Iniciar sesión <span class="sr-only">(current)</span></a>
-                    </li>
-                    <li class="nav-item active">
-                        <a class="nav-link" href="users/signup">Registrarse <span class="sr-only">(current)</span></a>
-                    </li>
+                    {{#if user}}
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            {{user.name}}
+                            </a>
+                            <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                            <a class="dropdown-item" href="/notes">Mis notas</a>
+                            <a class="dropdown-item" href="/notes/new">Nueva nota</a>
+                            <div class="dropdown-divider"></div>
+                            <a class="dropdown-item" href="/users/logout">Cerrar sesión</a>
+                            </div>
+                        </li>
+                    {{else}}
+                        <li class="nav-item active">
+                            <a class="nav-link" href="/users/signin">Iniciar sesión <span class="sr-only">(current)</span></a>
+                        </li>
+                        <li class="nav-item active">
+                            <a class="nav-link" href="/users/signup">Registrarse <span class="sr-only">(current)</span></a>
+                        </li>
+                    {{/if}}
                 </ul>
             </div>
         </div>

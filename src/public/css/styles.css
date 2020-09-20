@@ -2,9 +2,19 @@ body {
     background: #8E0E00;  /* fallback for old browsers */
     background: linear-gradient(to right, #1F1C18, #8E0E00); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
     background: -webkit-linear-gradient(to right, #1F1C18, #8E0E00);  /* Chrome 10-25, Safari 5.1-6 */
-
 }
 
 .logo {
     width: 40%;
+}
+
+main {
+    min-height: 900px;
+}    
+.bg-negro {
+    background-color: #303030;
+}
+
+.bg-gris {
+    background-color: #373737;
 }

@@ -9,7 +9,7 @@ passport.use( new LocalPassport({
     if(!user) {
         return done(null, false, { message: 'Usuario no encontrado'});
     }else {
-        const isMatch = await User.matchPass(password);
+        const isMatch = await user.matchPass(password);
         if(isMatch){
             return done(null, user)
         } else {
@@ -17,3 +17,13 @@ passport.use( new LocalPassport({
         }
     }
 }));
+
+passport.serializeUser( (user, done) => {
+    done(null, user.id)
+})
+
+passport.deserializeUser( (id, done) => {
+    User.findById(id, (err, user) => {
+        done(err, user)
+    });
+})

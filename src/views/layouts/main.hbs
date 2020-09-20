@@ -9,39 +9,8 @@
     <link rel="stylesheet" href="/css/styles.css">
 </head>
 <body>
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark mb-4">
-        <a class="navbar-brand" href="/">MMNotes</a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav mr-auto">
-                <li class="nav-item active">
-                    <a class="nav-link" href="/">Inicio <span class="sr-only">(current)</span></a>
-                </li>
-                <li class="nav-item active">
-                    <a class="nav-link" href="/about">Nosotros</a>
-                </li>
-                <li class="nav-item active">
-                    <a class="nav-link" href="/notes">Notas</a>
-                </li>
-                <li class="nav-item active">
-                    <a class="nav-link" href="/notes/new">Nueva nota</a>
-                </li>
-            </ul>
-        </div>
-        <div class="sign">
-            <ul class="navbar-nav mr-auto">
-                <li class="nav-item active">
-                    <a class="nav-link" href="users/signin">Iniciar sesión <span class="sr-only">(current)</span></a>
-                </li>
-                <li class="nav-item active">
-                    <a class="nav-link" href="users/signup">Registrarse <span class="sr-only">(current)</span></a>
-                </li>
-            </ul>
-        </div>
-    </nav>
+    
+    {{> nav }}
     <main class="container">
         {{> messages }}
         {{> errors }}

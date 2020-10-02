@@ -1,6 +1,9 @@
 const passport = require('passport');
 const LocalPassport = require('passport-local').Strategy;
+const GoogleStrategy = require('passport-google-oauth20').Strategy
 const User = require('../models/User');
+require('dotenv').config({ path: 'variables.env'});
+
 
 passport.use( new LocalPassport({
     usernameField: 'email'
@@ -15,6 +18,25 @@ passport.use( new LocalPassport({
         } else {
             return done(null, false, { message: 'Contraseña incorrecta'});
         }
+    }
+}));
+
+passport.use(new GoogleStrategy({
+    callbackURL: '/users/auth/google/redirect',
+    clientID: process.env.CLIENT_ID,
+    clientSecret: process.env.CLIENT_SECRET
+}, async (accessToken, refreshToken, profile, done) => {
+    const user = await User.findOne({ googleId: profile.id});
+    if(!user){
+        const newUser = new User ({
+            name: profile.displayName,
+            googleId: profile.id
+        });
+        newUser.save();
+        return done(null, newUser);
+    }
+    else{
+        return done(null, user)
     }
 }));
 

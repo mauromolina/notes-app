@@ -16,6 +16,16 @@ router.get('/users/signup', (req, res) => {
     res.render('users/signup');
 })
 
+router.get('/users/auth/google', passport.authenticate('google', {
+    scope: ['profile']
+}));
+
+router.get('/users/auth/google/redirect', passport.authenticate('google',{
+    successRedirect: '/notes',
+    failureRedirect: '/users/signin',
+    failureFlash: true
+    }));
+
 router.post('/users/signup', async (req, res) => {
     const { name, email, password, confirm } = req.body;
     const errors = [];

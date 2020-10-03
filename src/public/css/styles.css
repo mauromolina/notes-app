@@ -18,3 +18,8 @@ main {
 .bg-gris {
     background-color: #373737;
 }
+
+.btn-fb {
+    background-color: #3b5998;
+    color: #fff;
+}
